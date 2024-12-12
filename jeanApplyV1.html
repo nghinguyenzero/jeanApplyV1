@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jeanApplyV1</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            counter-reset: page;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            padding: 5px;
+            word-wrap: break-word;
+        }
+
+        .bg-grey {
+            background-color: #dcdcdc;
+        }
+
+        .bg-purple {
+            background-color: #f1f4ff;
+        }
+
+
+
+        .text-center {
+            text-align: center;
+        }
+
+
+        .text-column {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+        }
+
+        span {
+            background-color: #f1f4ff;
+        }
+
+        .w-full {
+            width: 100%;
+
+        }
+
+
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+
+                @bottom-center {
+                    content: "Page " counter(page);
+                }
+            }
+
+            body {
+                margin: 0;
+            }
+
+            input,
+            textarea {
+                border: none;
+                background-color: transparent;
+            }
+
+            .page-break-after {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-1">
+        <h1 class="text-center">售後服務申請單</h1>
+        <table>
+            <!-- 1 -->
+            <tr>
+                <td colspan="1" class="text-center">表單編號</td>
+                <td colspan="2">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">填表日期</td>
+                <td colspan="2">
+                    <span>___</span>
+                </td>
+                <td colspan="2" class="text-center">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="public" name="public">
+                        <label for="public" class="checkbox-label">公共</label>
+                        <input type="checkbox" id="private" name="private">
+                        <label for="private" class="checkbox-label">住家</label>
+                    </div>
+                </td>
+            </tr>
+            <!-- 2 -->
+            <tr>
+                <td rowspan="3" class="text-column">客户资料</td>
+                <td class="text-center">社区名称</td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">
+                    門牌
+                </td>
+                <td colspan="2">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">
+                    戶別
+                </td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+            </tr>
+            <!-- 3 -->
+            <tr>
+                <td class="text-center">屋主/住戶</td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">
+                    屋主/住戶電話
+                </td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">
+                    交屋日期
+                </td>
+                <td colspan="2">
+                    <span>___</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-center">聯絡人</td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">
+                    聯絡人電話
+                </td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">
+                    保固期限
+                </td>
+                <td colspan="2">
+                    <span>___</span>
+                </td>
+            </tr>
+
+            <!-- 3 -->
+
+            <tr>
+                <td rowspan="3" class="text-column">
+                    現場初勘情形
+                </td>
+                <td class="text-center">聯絡日期</td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+                <td rowspan="3" colspan="5">
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-center">初勘日期</td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-center">維修承辦人</td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+            </tr>
+
+            <!-- 4 -->
+            <tr>
+                <td rowspan="1" class="text-column">
+                    轉出
+                </td>
+                <td class="text-center">社区名称</td>
+                <td colspan="6">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="outsourced" name="outsourced">
+                        <label for="outsourced" class="checkbox-label">此维修单由本人自行向厂商叫修与结算款项,原因:</label>
+
+                        <input type="checkbox" id="outsourced" name="outsourced">
+                        <label for="outsourced" class="checkbox-label">耗材 / </label>
+
+                        <input type="checkbox" id="outsourced" name="outsourced">
+                        <label for="outsourced" class="checkbox-label"> 人為損壞 / </label>
+
+                        <input type="checkbox" id="outsourced" name="outsourced">
+                        <label for="outsourced" class="checkbox-label">已過保固期
+                        </label>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td rowspan="2" colspan="1" class="text-column">
+                    簽認
+                </td>
+                <td colspan="2" class="bg-grey text-center">
+                    客戶簽章
+                </td>
+                <td colspan="3" class="bg-grey text-center">
+                    工務處簽章
+                </td>
+                <td colspan="2" class="bg-grey text-center">
+                    客服部簽章
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="text-center">
+                    其他附記事項
+                </td>
+                <td colspan="5">
+                    <span>___</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="text-center">
+                    其他附記事項
+                </td>
+                <td colspan="6">
+                    <span>___</span>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="page-break-after"></div>
+
+    <div class="page-2">
+
+        <h1 class="text-center">售後服務申請單</h1>
+
+        <table>
+            <!-- 1 -->
+            <tr>
+                <td colspan="1" class="text-center">表單編號</td>
+                <td colspan="2">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">填表日期</td>
+                <td colspan="2">
+                    <span>___</span>
+                </td>
+                <td colspan="2" class="text-center">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="public" name="public">
+                        <label for="public" class="checkbox-label">公共</label>
+                        <input type="checkbox" id="private" name="private">
+                        <label for="private" class="checkbox-label">住家</label>
+                    </div>
+                </td>
+            </tr>
+            <!-- 2 -->
+            <tr>
+                <td rowspan="3" class="text-column">
+                    客戶資料
+                </td>
+                <td class="text-center">社區名稱</td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">
+                    門牌
+                </td>
+                <td colspan="2">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">
+                    戶別
+                </td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+            </tr>
+            <!-- 3 -->
+            <tr>
+                <td class="text-center">屋主/住戶</td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">
+                    屋主/住戶電話
+                </td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">
+                    交屋日期
+                </td>
+                <td colspan="2">
+                    <span>___</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="text-center">聯絡人</td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">
+                    聯絡人電話
+                </td>
+                <td colspan="1">
+                    <span>___</span>
+                </td>
+                <td colspan="1" class="text-center">
+                    保固期限
+                </td>
+                <td colspan="2">
+                    <span>___</span>
+                </td>
+            </tr>
+
+        </table>
+
+        <br>
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="bg-grey text-center" style="width: 30px;">項次</th>
+                    <th class="bg-grey text-center">個案編號</th>
+                    <th class="bg-grey text-center">位置</th>
+                    <th class="bg-grey text-center">部品</th>
+                    <th class="bg-grey text-center">項目</th>
+                    <th class="bg-grey text-center">項目代號</th>
+                    <th class="bg-grey text-center">報修內容</th>
+                    <th class="bg-grey text-center">處理方式、過程說明</th>
+                    <th class="bg-grey text-center">修繕日期</th>
+                    <th class="bg-grey text-center">結案日期</th>
+                    <th class="bg-grey text-center">備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                </tr>
+                <tr>
+                    <td class="text-center">2</td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                </tr>
+                <tr>
+                    <td class="text-center">3</td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                    <td><span>___</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
