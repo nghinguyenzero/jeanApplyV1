@@ -22,17 +22,17 @@
             border: 1px solid black;
             padding: 5px;
             word-wrap: break-word;
+            font-weight: bold;
         }
 
         .bg-grey {
             background-color: #dcdcdc;
+            /* -webkit-print-color-adjust: exact; */
         }
 
         .bg-purple {
             background-color: #f1f4ff;
         }
-
-
 
         .text-center {
             text-align: center;
@@ -42,6 +42,7 @@
         .text-column {
             writing-mode: vertical-rl;
             text-orientation: upright;
+            text-align: center;
         }
 
         span {
@@ -202,8 +203,8 @@
                 <td rowspan="1" class="text-column">
                     轉出
                 </td>
-                <td class="text-center">社区名称</td>
-                <td colspan="6">
+                <!-- <td class="text-center">社区名称</td> -->
+                <td colspan="7">
                     <div class="checkbox-group">
                         <input type="checkbox" id="outsourced" name="outsourced">
                         <label for="outsourced" class="checkbox-label">此维修单由本人自行向厂商叫修与结算款项,原因:</label>
@@ -237,9 +238,13 @@
             </tr>
             <tr>
                 <td colspan="2" class="text-center">
-                    其他附記事項
+                    <span>___</span>
+                    
                 </td>
-                <td colspan="5">
+                <td colspan="3">
+                    <span>___</span>
+                </td>
+                <td colspan="2">
                     <span>___</span>
                 </td>
             </tr>
@@ -350,7 +355,7 @@
             <thead>
                 <tr>
                     <th class="bg-grey text-center" style="width: 30px;">項次</th>
-                    <th class="bg-grey text-center">個案編號</th>
+                    <th class="bg-grey text-center" >個案編號</th>
                     <th class="bg-grey text-center">位置</th>
                     <th class="bg-grey text-center">部品</th>
                     <th class="bg-grey text-center">項目</th>
@@ -365,7 +370,7 @@
             <tbody>
                 <tr>
                     <td class="text-center">1</td>
-                    <td><span>___</span></td>
+                    <td><span style="color: red;">___</span></td>
                     <td><span>___</span></td>
                     <td><span>___</span></td>
                     <td><span>___</span></td>
